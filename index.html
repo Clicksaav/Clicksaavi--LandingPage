@@ -36,6 +36,13 @@
     
     <!--====== Style CSS ======-->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* CSS to target the form container with the "custom-form" class */
+        .custom-form {
+          max-width: 300px; /* Set your desired maximum width */
+        }
+      </style>
     
 </head>
 
@@ -163,12 +170,19 @@
 
                         <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
                         <script>
-                        hbspt.forms.create({
-                        region: "na1",
-                        portalId: "44099701",
-                        formId: "07fab16f-2b44-450b-a3a1-4a70249fd5ef"
-                        });
-                       </script>
+                          hbspt.forms.create({
+                            region: "na1",
+                            portalId: "44099701",
+                            formId: "07fab16f-2b44-450b-a3a1-4a70249fd5ef",
+                            css: "", // Add this line to include custom CSS
+                            onFormReady: function($form) {
+                              $form.addClass('custom-form'); // Add the "custom-form" class to the form container
+                            }
+                          });
+                        </script>
+                        In this example, we've added the "custom-form" class to the form container and set a maximum width of 300px in the CSS. You can adjust the max-width property to your desired size. This will help you control the size of the HubSpot form on your landing page.
+
+                              
                    </div>
                 </div> <!-- row -->
             </div> <!-- container -->
